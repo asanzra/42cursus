@@ -3,28 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alromero <alromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asanz-ra <asanz-ra@42madrid.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/08 12:39:50 by agomez-o          #+#    #+#             */
-/*   Updated: 2024/01/10 00:35:12 by asanz-ra         ###   ########.fr       */
+/*   Created: 2024/01/10 00:57:35 by asanz-ra          #+#    #+#             */
+/*   Updated: 2024/01/10 02:53:56 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "libft.h"
+#include <stddef.h>
 
-int	ft_memcmp(const void *dst, const void *str, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str2;
-	unsigned char	*dst2;
+	size_t			i;
+	unsigned char	*sc1;
+	unsigned char	*sc2;
 
-	dst2 = (unsigned char*)dst;
-	str2 = (unsigned char *)str;
-	if (n)
-		while (n--)
-			if (*dst2++ != *str2++)
-				return (*(--dst2) - *(--str2));
-	return (0);
+	sc1 = (unsigned char *) s1;
+	sc2 = (unsigned char *) s2;
+	i = 0;
+	while (n > 0)
+	{
+		if (sc1[i] != sc2[i])
+			break ;
+		i++ ;
+		n-- ;
+	}
+	if (n > 0)
+		return ((int)(sc1[i] - sc2[i]));
+	return ((int)(0));
 }
