@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Source files
 SRCSDIR = handin
-SRCS = strlcat_main.c ft_strlcat.c
+SRCS = split_main.c
 
 # Object files
 OBJSDIR = objs
