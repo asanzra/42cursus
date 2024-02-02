@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 21:47:53 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/01/11 23:08:35 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:41:16 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 #include <stddef.h>
 #include "libft.h"
 
-#include<signal.h>
-
 static size_t	count_strings(char const *s, char c);
 static char		*get_string_from(size_t *is, char const *s, char c);
 static char		**stop(size_t ires, char **res);
 
 char	**ft_split(char const *s, char c)
 {
-	raise(SIGSEGV);
 	char	**res;
 	size_t	s_count;
 	size_t	is;
 	size_t	ires;
 
 	s_count = count_strings(s, c);
-	res = (char **)malloc(sizeof(char *) * s_count + 1);
+	res = (char **)malloc(sizeof(char *) * (s_count + 1));
 	if (res == 0)
 		return ((char **)0);
 	is = 0;
@@ -47,11 +44,12 @@ char	**ft_split(char const *s, char c)
 
 static char	**stop(size_t ires, char **res)
 {
-	while (ires >= 0)
+	while (ires > 0)
 	{
 		free(res[ires]);
 		ires --;
 	}
+	free(res[0]);
 	free(res);
 	return ((char **)0);
 }

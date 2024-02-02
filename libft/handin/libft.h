@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:01:41 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/01/11 23:08:44 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:46:17 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:01:06 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/01/11 21:36:20 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:30:21 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,17 @@ static size_t	get_0_ind_lim(const char *s1, const char *set)
 
 //This f. returns the index of the first element in s1 that's not in set,
 //beggining from the end. If every letter in set, returns len of s1.
+//For example for 
+//	  set         ="42"
+//	  s1          ="42424hey there4242"
+//        Indices     : 012345678901234567
+//        Trailing set:"              4242"
+//len1 = 18 and we return index 13, which is the last one where we
+//have a character that is not in the set.
+//
+//Setting the while loop to i1<len1 effectively prevents us from going into 
+//indices over the limits(we are doing i1-- for i1=0, which gives the maximum 
+//unsigned long, as i1 being a size_t prevents it from being negative.
 static size_t	get_1_ind_lim(const char *s1, const char *set)
 {
 	size_t	i1;
@@ -87,7 +98,7 @@ static size_t	get_1_ind_lim(const char *s1, const char *set)
 	len1 = ft_strlen(s1);
 	lenset = ft_strlen(set);
 	i1 = len1 - 1;
-	while (i1 >= 0)
+	while (i1 < len1)
 	{
 		iset = 0;
 		while (iset < lenset && s1[i1] != set[iset])
