@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Source files
 SRCSDIR = handin
-SRCS = split_main.c
+SRCS = itoa_main.c
 
 # Object files
 OBJSDIR = objs
