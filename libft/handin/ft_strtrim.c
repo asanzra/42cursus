@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:01:06 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/01/29 13:30:21 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:37:15 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static char	*empty_string(void)
 	char	*res;
 
 	res = (char *) malloc(1);
+	if (res == 0)
+		return ((char *) 0);
 	res[0] = '\0';
 	return (res);
 }
@@ -47,6 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (empty_string());
 	res_size = 2 + index_limits[1] - (index_limits[0]);
 	res = (char *) malloc(res_size);
+	if (res == 0)
+		return ((char *) 0);
 	ft_strlcpy(res, &(s1[index_limits[0]]), res_size);
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:56:23 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/01/11 21:46:10 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:32:28 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s))
 	{
 		res = (char *) malloc(1);
+		if (res == 0)
+			return ((char *) 0);
 		res[0] = '\0';
 		return (res);
 	}
