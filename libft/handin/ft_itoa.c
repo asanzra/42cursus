@@ -6,15 +6,15 @@
 /*   By: asanz-ra <asanz-ra@42madrid.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:47:06 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/02/02 12:19:28 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:33:47 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
-int		get_digit_count(long n);
-void	fill_str(char *str, long n, size_t strlen, int negative);
+static int	get_digit_count(long n);
+static void	fill_str(char *str, long n, size_t strlen, int negative);
 
 char	*ft_itoa(int n)
 {
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 //the integer is reduced to 0 (until no more digits left).
 //Example: 9045->904->90->9->0 (4 changes=4 digits)
 //For input of 0, the loop would return 0 digits, so we discard this case.
-int	get_digit_count(long num)
+static int	get_digit_count(long num)
 {
 	int	count;
 
@@ -61,7 +61,7 @@ int	get_digit_count(long num)
 }
 
 //First fills symbol (-) then string from the last digit, then terminates it.
-void	fill_str(char *str, long num, size_t strlen, int negative)
+static void	fill_str(char *str, long num, size_t strlen, int negative)
 {
 	int	write_i;
 	int	first_i;

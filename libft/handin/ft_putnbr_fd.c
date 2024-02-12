@@ -6,15 +6,15 @@
 /*   By: asanz-ra <asanz-ra@42madrid.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:07:39 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/02/11 14:40:19 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:33:17 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_digit_count(long num);
-void	fill_str(int fd, long num, int digit_count, int negative);
-long	power(int base, unsigned int exp);
+static int	get_digit_count(long num);
+static void	fill_str(int fd, long num, int digit_count, int negative);
+static long	power(int base, unsigned int exp);
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -37,7 +37,7 @@ void	ft_putnbr_fd(int n, int fd)
 //the integer is reduced to 0 (until no more digits left).
 //Example: 9045->904->90->9->0 (4 changes=4 digits)
 //For input of 0, the loop would return 0 digits, so we discard this case.
-int	get_digit_count(long num)
+static int	get_digit_count(long num)
 {
 	int	count;
 
@@ -55,7 +55,7 @@ int	get_digit_count(long num)
 
 //First fills symbol (-) then string from number.
 //If (digit_count) is 4 (i.e. for 7463), 7 represents 7*10³ (digit_count-1)
-void	fill_str(int fd, long num, int digit_count, int negative)
+static void	fill_str(int fd, long num, int digit_count, int negative)
 {
 	int		digit_i;
 	long	digit_value;
@@ -74,7 +74,7 @@ void	fill_str(int fd, long num, int digit_count, int negative)
 	}
 }
 
-long	power(int base, unsigned int exp)
+static long	power(int base, unsigned int exp)
 {
 	long	res;
 

@@ -6,7 +6,7 @@
 /*   By: asanz-ra <asanz-ra@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:56:23 by asanz-ra          #+#    #+#             */
-/*   Updated: 2024/02/11 16:32:28 by asanz-ra         ###   ########.fr       */
+/*   Updated: 2024/02/12 13:22:01 by asanz-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		res[0] = '\0';
 		return (res);
 	}
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	res = (char *) malloc(len + 1);
 	if (res == 0)
 		return ((char *)0);

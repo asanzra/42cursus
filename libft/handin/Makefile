@@ -6,7 +6,7 @@
 #    By: asanz-ra <asanz-ra@42madrid.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 20:14:43 by asanz-ra          #+#    #+#              #
-#    Updated: 2024/02/11 15:48:23 by asanz-ra         ###   ########.fr        #
+#    Updated: 2024/02/12 14:09:03 by asanz-ra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Werror -Wextra
 
 # Archive (lib) creator
 LIBA = ar rcs
