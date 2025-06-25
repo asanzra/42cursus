@@ -1,0 +1,9 @@
+[submodule "00_libft_extended"]
+	path = 00_libft_extended
+	url = git@github.com:asanzra/libft_extended.git
+[submodule "01_printf"]
+	path = 01_printf
+	url = git@github.com:asanzra/printf.git
+[submodule "02_get_next_line"]
+	path = 02_get_next_line
+	url = git@github.com:asanzra/get_next_line.git
