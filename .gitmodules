@@ -7,3 +7,6 @@
 [submodule "02_get_next_line"]
 	path = 02_get_next_line
 	url = git@github.com:asanzra/get_next_line.git
+[submodule "03_minitalk"]
+	path = 03_minitalk
+	url = git@github.com:asanzra/minitalk.git
